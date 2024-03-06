@@ -11,15 +11,13 @@ public class Ladder implements Characters{
 
     public Ladder(int start, int end) {
 
-        if(end<=start){
-            throw new IllegalArgumentException("End of ladder should be greater than start");
-        }
+        validateCharacter(start,end);
         this.start = start;
         this.end = end;
     }
 
     @Override
-    public void validateCharacter() {
+    public void validateCharacter(int start, int end) {
         if (end<=start) {
             throw new IllegalArgumentException("Start and end of ladder should be greater than 0");
         }

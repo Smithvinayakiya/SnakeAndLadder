@@ -13,17 +13,14 @@ public class Snake implements Characters{
 
     public Snake(int start, int end) {
 
-        if (start<=end){
-            throw new IllegalArgumentException("Start of snake should be greater than end");
-        }
+        validateCharacter(start,end);
         this.start = start;
         this.end = end;
     }
 
-    // 1. Snake start > end
     @Override
-    public void validateCharacter() {
-        if (start>=end) {
+    public void validateCharacter(int start, int end) {
+        if (start<=end) {
             throw new IllegalArgumentException("Start of snake should be greater than end");
         }
     }
